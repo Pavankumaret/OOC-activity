@@ -2,23 +2,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Contest1 {
-   public static List<String> splitString(String str, char esc) {
+   public static List<String> splitString(String mainstr, char esc_char) {
       List<String> res = new ArrayList<String>();
 
-		// Your Logic goes here
-
-	String st = "";
-	for(char ch: str.toCharArray()) {
-	   if(ch == esc) {
-	      res.add(st);
-		st = "";
+	String str = "";
+	for(char ch: mainstr.toCharArray()) {
+	   if(ch == esc_char) {
+	      res.add(str);
+		str = "";
 		continue;
 	   }
-			st+=ch;
+			str+=ch;
 	}
 
-	if(!(st.equals(""))) {
-		res.add(st);
+	if(!(str.equals(""))) {
+		res.add(str);
 	}
 
 	return res;
